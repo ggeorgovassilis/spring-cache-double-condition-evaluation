@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd"
+ 	maxBytesLocalHeap="1M"
+	maxBytesLocalDisk="2M">
+		<defaultCache eternal="false" timeToLiveSeconds="60"/>
+		<cache name="capitalizer" timeToLiveSeconds="3600" eternal="true" diskPersistent="false" overflowToDisk="false" />
+
+</ehcache>
