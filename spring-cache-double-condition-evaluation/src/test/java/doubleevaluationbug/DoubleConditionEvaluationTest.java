@@ -14,10 +14,16 @@ public class DoubleConditionEvaluationTest {
 	@Autowired
 	Capitalizer someComponent;
 	
+	@Autowired
+	CacheChecker checker;
+	
 	@Test
 	public void test() {
+		assertEquals(0, checker.getInvocationCount());
 		assertEquals("BIG", someComponent.capitalize("big"));
+		assertEquals(1, checker.getInvocationCount());
 		assertEquals("NOCACHE-BIG", someComponent.capitalize("nocache-big"));
+		assertEquals(2, checker.getInvocationCount());
 	}
 
 }
